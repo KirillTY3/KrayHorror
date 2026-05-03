@@ -55,22 +55,52 @@
         .header {
             text-align: center;
             margin-bottom: 70px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .header-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            background: rgba(232, 72, 72, 0.1);
+            border: 1px solid rgba(232, 72, 72, 0.2);
+            border-radius: 20px;
+            color: #e84848;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .header h1 {
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 36px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 14px;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 15px;
+            letter-spacing: 6px;
+            color: #fff;
+            margin-bottom: 12px;
+            text-shadow: 0 0 30px rgba(255,255,255,0.1);
+        }
+
+        .header p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
         }
 
         .header .line {
-            width: 120px;
-            height: 1px;
-            background: rgba(255,255,255,0.1);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #e84848 50%, 
+                transparent 100%
+            );
             margin: 0 auto;
+            box-shadow: 0 0 15px rgba(232, 72, 72, 0.5);
+            border-radius: 2px;
         }
 
         .projects-list {
@@ -127,6 +157,9 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
+            flex: 1;
+            min-width: 0;
+            margin-right: 20px;
         }
 
         .project-status {
@@ -149,9 +182,12 @@
         }
 
         .project-name {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 600;
             letter-spacing: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .project-desc {
@@ -162,8 +198,8 @@
 
         .project-action {
             padding: 14px 36px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 8px;
             color: white;
             font-size: 11px;
@@ -174,6 +210,9 @@
             backdrop-filter: blur(8px);
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
 
         .project-action::before {
@@ -252,7 +291,47 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        footer {
+            margin-top: 100px;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            background: linear-gradient(to bottom, transparent, rgba(232, 72, 72, 0.02));
+            position: relative;
+        }
 
+        .footer-social {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 24px;
+        }
+
+        .footer-social:hover {
+            background: rgba(42, 171, 238, 0.1);
+            border-color: rgba(42, 171, 238, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-social:hover svg {
+            transform: scale(1.1);
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -262,20 +341,34 @@
     <div class="container">
 
         <header class="header">
+            <div class="header-badge">Terminal v2.0.4</div>
             <h1>Выберите проект</h1>
+            <p>Добро пожаловать</p>
             <div class="line"></div>
         </header>
 
         <div class="projects-list">
 
             <div class="project-item">
+                <div class="project-bg" style="background-image: url('https://i.ibb.co/Kc70tLKf/image.png')"></div>
+                <div class="project-content">
+                    <div class="project-info">
+                        <h3 class="project-name">Край Руин 2.0</h3>
+                        <p class="project-desc">Окунитесь в атмосферу заброшенного мира, застывшего после «Исчезновения».</p>
+                    </div>
+                    <a href="Kray.html" class="project-action" style="">Перейти</a>
+                </div>
+            </div>
+
+                        <div class="project-item">
                 <div class="project-bg" style="background-image: url('https://i.ibb.co/23zx9nN0/photo-2026-04-25-15-13-57.jpg')"></div>
                 <div class="project-content">
                     <div class="project-info">
-                        <h3 class="project-name">Край Руин</h3>
-                        <p class="project-desc">Классическая сборка с улучшенными механиками и оптимизацией</p>
+                        <h3 class="project-name">Край Руин II: Сквозь Цикл Тишины</h3>
+                        <p class="project-desc">Продолжение истории. Проект находится в активной разработке.</p>
+                        <div id="release-timer" style="font-size: 10px; color: #e84848; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; font-weight: 600;">До релиза: <span id="timer-val">...</span></div>
                     </div>
-                    <a href="part1/MenuKray.html" class="project-action" style="">Перейти</a>
+                    <a href="https://youtu.be/Ir1pO9J1ilY?si=i_rqEsksEtaIiMTK" target="_blank" class="project-action">Трейлер</a>
                 </div>
             </div>
 
@@ -284,62 +377,13 @@
     </div>
 
     <!-- Футер с социальными сетями -->
-    <footer style="margin-top: 80px; padding: 28px 30px; background: rgba(255, 255, 255, 0.02); border-radius: 16px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); position: relative; overflow: hidden;">
-        
-        <style>
-            .footer-social {
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.04);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-                text-decoration: none;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .footer-social::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(42, 171, 238, 0.1), transparent);
-                transition: left 0.6s ease;
-            }
-            
-            .footer-social:hover {
-                background: rgba(42, 171, 238, 0.12);
-                transform: translateY(-4px) scale(1.08);
-                box-shadow: 0 12px 30px rgba(42, 171, 238, 0.2), 0 0 0 1px rgba(42, 171, 238, 0.3);
-            }
-            
-            .footer-social:hover::before {
-                left: 100%;
-            }
-            
-            .footer-social svg {
-                position: relative;
-                z-index: 1;
-                transition: transform 0.25s ease;
-            }
-            
-            .footer-social:hover svg {
-                transform: scale(1.15);
-            }
-        </style>
-        
+    <footer>
         <a href="https://t.me/Kotik53" target="_blank" class="footer-social">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#2AABEE">
                 <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.9 8.25c-.15 1.82-.92 6.22-1.3 8.26-.16.86-.5 1.15-.82 1.18-.69.06-1.22-.46-1.9-.9-1.05-.69-1.65-1.12-2.67-1.8-1.18-.78-.41-1.21.26-1.91.18-.18 3.24-2.97 3.3-3.23.01-.03.01-.15-.06-.21s-.17-.04-.25-.02c-.1.02-1.79 1.14-5.06 3.34-.48.33-.91.49-1.3.48-.43-.01-1.25-.24-1.86-.44-.75-.24-1.35-.37-1.3-.79.03-.23.34-.47.94-.71 3.68-1.52 6.13-2.53 7.36-3.02 3.51-1.4 4.25-1.65 4.73-1.66.1 0 .33.02.48.12.13.09.17.21.19.3.02.08.05.17.03.26z"/>
             </svg>
         </a>
-        
-        <p style="color: rgba(255, 255, 255, 0.22); font-size: 11px; margin-top: 16px; letter-spacing: 1px; font-weight: 400;">© 2026 Kotik53</p>
+        <p class="footer-copy">© 2026 Kotik53</p>
     </footer>
 
     <script>
@@ -359,6 +403,28 @@
                 }, 1800);
             });
         });
-    </script>
 
+        // Таймер обратного отсчета до 03.12.2026
+        const countDownDate = new Date("Dec 3, 2026 00:00:00").getTime();
+
+        const timerUpdate = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const timerElement = document.getElementById("timer-val");
+            if (timerElement) {
+                timerElement.innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
+            }
+
+            if (distance < 0) {
+                clearInterval(timerUpdate);
+                document.getElementById("release-timer").innerHTML = "ПРОЕКТ ВЫШЕЛ";
+            }
+        }, 1000);
+    </script>
 </body></html>
